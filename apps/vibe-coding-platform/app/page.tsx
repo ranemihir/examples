@@ -5,6 +5,7 @@ import { Logs } from './logs'
 import { Preview } from './preview'
 import { TabItem, TabContent, TabGroup } from '@/components/tabs'
 import { Welcome } from '@/components/modals/welcome'
+import { HelloWorld } from '@/components/hello-world'
 import { cookies } from 'next/headers'
 import { hideBanner } from '@/app/actions'
 
@@ -20,6 +21,7 @@ export default async function Page() {
           <TabItem tabId="chat">Chat</TabItem>
           <TabItem tabId="preview">Preview</TabItem>
           <TabItem tabId="file-explorer">File Explorer</TabItem>
+          <TabItem tabId="hello-world">Hello World</TabItem>
           <TabItem tabId="logs">Logs</TabItem>
         </ul>
         <div className="flex-1 flex w-full min-h-0 overflow-hidden lg:space-x-2">
@@ -35,6 +37,9 @@ export default async function Page() {
             </TabContent>
             <TabContent className="lg:h-1/3" tabId="file-explorer">
               <FileExplorer className="flex-1 overflow-hidden" />
+            </TabContent>
+            <TabContent className="lg:h-1/3" tabId="hello-world">
+              <HelloWorld className="flex-1 overflow-hidden" />
             </TabContent>
             <TabContent className="lg:h-1/3" tabId="logs">
               <Logs className="flex-1 overflow-hidden" />
